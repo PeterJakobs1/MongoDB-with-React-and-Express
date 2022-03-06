@@ -9,3 +9,5 @@ const server = app.listen(process.env.PORT || 3000, () => {
 });
 
 // heroku login   git remote    heroku git:remote -a lecture-7
+// heroku kommandoer = heroku login & heroku git:remote
+// git remote

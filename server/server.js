@@ -11,9 +11,10 @@ const app = express();
 const mongoClient = new MongoClient(process.env.MONGODB_URL);
 mongoClient.connect().then(async () => {
   console.log("Connected to mongodb");
-  const databases = await mongoClient.db().admin().listDatabases();
-  console.log(databases);
-  app.use("/api/movies", MoviesApi(mongoClient.db("lecture-7")));
+  app.use(
+    "/api/movies",
+    MoviesApi(mongoClient.db(process.env.MONGODB_DATABASE || "lecture-7"))
+  );
 });
 
 app.use(express.static("../client/dist/"));
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
     next();
   }
 });
+
 const server = app.listen(process.env.PORT || 3000, () => {
   console.log(`Started on http://localhost:${server.address().port}`);
 });

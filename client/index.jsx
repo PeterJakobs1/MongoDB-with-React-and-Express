@@ -49,6 +49,16 @@ async function fetchJSON(url) {
   return await res.json();
 }
 
+function MovieCard({ movie: { title, plot, poster } }) {
+  return (
+    <>
+      <h3>{title}</h3>
+      {poster && <img src={poster} width={100} alt={"Movie poster"} />}
+      <div>{plot}</div>
+    </>
+  );
+}
+
 function ListMovies() {
   const { loading, error, data } = useLoading(async () =>
     fetchJSON("/api/movies")
@@ -70,14 +80,13 @@ function ListMovies() {
     <div>
       <h1>Movies in the database</h1>
 
-      <ul>
-        {data.map((movie) => (
-          <li key={movie.title}>{movie.title}</li>
-        ))}
-      </ul>
+      {data.map((movie) => (
+        <MovieCard key={movie.title} movie={movie} />
+      ))}
     </div>
   );
 }
+
 function AddNewMovie() {
   return (
     <form>
@@ -85,6 +94,7 @@ function AddNewMovie() {
     </form>
   );
 }
+
 function Application() {
   return (
     <BrowserRouter>
@@ -96,4 +106,5 @@ function Application() {
     </BrowserRouter>
   );
 }
+
 ReactDOM.render(<Application />, document.getElementById("app"));

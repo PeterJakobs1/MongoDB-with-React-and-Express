@@ -5,10 +5,10 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 function FrontPage() {
   return (
     <div>
-      <h1>Movie database</h1>
+      <h1>Movie Database</h1>
       <ul>
         <li>
-          <Link to={"/"}>List Movies</Link>
+          <Link to={"/movies"}>List movies</Link>
         </li>
         <li>
           <Link to={"/movies/new"}>Add new movie</Link>
@@ -19,11 +19,19 @@ function FrontPage() {
 }
 
 function ListMovies() {
-  return null;
+  return (
+    <div>
+      <h1>Movies in the database</h1>
+    </div>
+  );
 }
 
 function AddNewMovie() {
-  return null;
+  return (
+    <form>
+      <h1>Add new movie</h1>
+    </form>
+  );
 }
 
 function Application() {

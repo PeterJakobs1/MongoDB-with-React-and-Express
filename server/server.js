@@ -1,7 +1,10 @@
 import express from "express";
 import * as path from "path";
+import { MoviesApi } from "./moviesApi.js";
 
 const app = express();
+
+app.use("/api/movies", MoviesApi());
 
 app.use(express.static("../client/dist/"));
 
@@ -12,11 +15,6 @@ app.use((req, res, next) => {
     next();
   }
 });
-
 const server = app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server started on http://localhost:${server.address().port}`);
+  console.log(`Started on http://localhost:${server.address().port}`);
 });
-
-// heroku login   git remote    heroku git:remote -a lecture-7
-// heroku kommandoer = heroku login & heroku git:remote
-// git remote

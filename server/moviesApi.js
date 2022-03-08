@@ -8,14 +8,14 @@ export function MoviesApi(mongoDatabase) {
       .collection("movies")
       .find({
         countries: {
-          $in: ["Ukraine"],
+          $in: ["Norway"],
         },
         year: {
           $gte: 2000,
         },
       })
       .sort({
-        alphabetic: -1,
+        metacrtic: 1,
       })
       .map(({ title, year, plot, genre, poster }) => ({
         title,

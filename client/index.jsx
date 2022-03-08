@@ -5,7 +5,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 function FrontPage() {
   return (
     <div>
-      <h1>Movie Database</h1>
+      <h1>Movie Database!</h1>
       <ul>
         <li>
           <Link to={"/movies"}>List movies</Link>
@@ -53,7 +53,7 @@ function MovieCard({ movie: { title, plot, poster } }) {
   return (
     <>
       <h3>{title}</h3>
-      {poster && <img src={poster} width={100} alt={"Movie poster"} />}
+      {poster && <img src={poster} width={85} alt={"Movie poster"} />}
       <div>{plot}</div>
     </>
   );

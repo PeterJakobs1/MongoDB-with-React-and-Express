@@ -16,3 +16,6 @@ MongoDB with React and Express
     * [ ] List movies from Mongodb
     * [ ] Add movies in MongoDB
 
+
+View heruko application: https://lecture-7.herokuapp.com/movies
+

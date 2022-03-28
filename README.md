@@ -19,3 +19,15 @@ MongoDB with React and Express
 
 View heruko application: https://lecture-7.herokuapp.com/movies
 
+## Lecture 10
+
+* [ ] Restructure frontend to allow for testing
+* [ ] Implement test for <ListMovies />
+* [ ] Run test on Github
+  * [ ] Coverage report jest-coverage-report-action
+* [ ] Backend test - mongodb
+* [ ] GitHub action with backend with MongoDB
+* [ ] Backend: Insert test first
+* [ ] Frontend test for insert
+* [ ] useContext React Context for testing
+* 

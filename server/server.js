@@ -13,7 +13,7 @@ mongoClient.connect().then(async () => {
   console.log("Connected to mongodb");
   app.use(
     "/api/movies",
-    MoviesApi(mongoClient.db(process.env.MONGODB_DATABASE || "lecture-7"))
+    MoviesApi(mongoClient.db(process.env.MONGODB_DATABASE || "pg6301-7"))
   );
 });
 
@@ -27,6 +27,6 @@ app.use((req, res, next) => {
   }
 });
 
-const server = app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 8008, () => {
   console.log(`Started on http://localhost:${server.address().port}`);
 });

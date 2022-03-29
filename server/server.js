@@ -29,6 +29,6 @@ app.use((req, res, next) => {
   }
 });
 
-const server = app.listen(process.env.PORT || 0, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
   console.log(`Started on http://localhost:${server.address().port}`);
 });

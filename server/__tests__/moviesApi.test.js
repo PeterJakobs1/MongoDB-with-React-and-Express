@@ -14,9 +14,10 @@ const mongoClient = new MongoClient(process.env.MONGODB_URL);
 beforeAll(async () => {
   await mongoClient.connect();
   const database = mongoClient.db("test_database");
-  await database.collection("movies").deleteMany({});
+  await database.collection("movie").deleteMany({});
   app.use("/api/movies", MoviesApi(database));
 });
+
 afterAll(() => {
   mongoClient.close();
 });
@@ -27,8 +28,6 @@ describe("movies api", () => {
       .post("/api/movies")
       .send({
         title: "My test movie",
-        country: "Norway",
-        year: 2020,
       })
       .expect(200);
     expect(

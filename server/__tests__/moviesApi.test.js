@@ -20,6 +20,7 @@ beforeAll(async () => {
 afterAll(() => {
   mongoClient.close();
 });
+
 describe("movies api", () => {
   it("adds a new movie", async () => {
     await request(app)
